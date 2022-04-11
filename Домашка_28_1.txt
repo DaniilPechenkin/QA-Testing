@@ -1,0 +1,180 @@
+1. Посмотреть где я.
+Даниил@home-pc MINGW64 ~/desktop/telegram/домашка
+$ pwd
+/c/Users/Даниил/desktop/telegram/домашка
+
+2.Создать папку.
+Даниил@home-pc MINGW64 ~/desktop/telegram/домашка
+$ mkdir dir1
+
+3.Зайти в папку
+Даниил@home-pc MINGW64 ~/desktop/telegram/домашка
+$ cd dir1
+
+4.Создать 3 папки
+Даниил@home-pc MINGW64 ~/desktop/telegram/домашка/dir1
+$ mkdir {p1,p2,p3}
+
+5.Зайти в любую папку
+Даниил@home-pc MINGW64 ~/desktop/telegram/домашка/dir1
+$ cd p1
+
+6.Создать 5 файлов (3 txt и 2 json)
+Даниил@home-pc MINGW64 ~/desktop/telegram/домашка/dir1/p1
+$ touch {1.txt,2.txt,3.txt,4.json,5.json}
+
+7.Создать 3 папки
+Даниил@home-pc MINGW64 ~/desktop/telegram/домашка/dir1/p1
+$ mkdir {pp1,pp2,pp3}
+
+8.Вывести список содержимого папки
+Даниил@home-pc MINGW64 ~/desktop/telegram/домашка/dir1/p1
+$ ls
+1.txt  2.txt  3.txt  4.json  5.json  pp1/  pp2/  pp3/
+
+9.Открыть любой txt файл
+Даниил@home-pc MINGW64 ~/desktop/telegram/домашка/dir1/p1
+$ vim 1.txt
+
+10. Написать в файл любой текст
+{
+First name "Daniil"
+Last name "Pechenkin"
+Country "Russia"
+City "Ekaterinburg"
+Age "28"
+}
+
+11.Сохранить и выйти.
+:wq
+
+12.Выйти из папки на уровень выше
+Даниил@home-pc MINGW64 ~/desktop/telegram/домашка/dir1/p1
+$ cd ..
+
+Даниил@home-pc MINGW64 ~/desktop/telegram/домашка/dir1
+$ ls
+p1/  p2/  p3/
+
+13.Переместить любые 2 файла, которые вы создали, в любую другую папку
+Даниил@home-pc MINGW64 ~/desktop/telegram/домашка/dir1
+$ mv p1/1.txt p2/1.txt
+
+14.Скопировать любые 2 файла в другую папку
+Даниил@home-pc MINGW64 ~/desktop/telegram/домашка/dir1
+$ mv p1/4.json p2/4.json
+
+Даниил@home-pc MINGW64 ~/desktop/telegram/домашка/dir1
+$ cp p2/1.txt 1new.txt
+
+Даниил@home-pc MINGW64 ~/desktop/telegram/домашка/dir1
+$ cp p2/4.json 4new.json
+
+15.Найти файл по имени
+Даниил@home-pc MINGW64 ~/desktop/telegram/домашка/dir1
+$ find .
+.
+./1new.txt
+./4new.json
+./p1
+./p1/2.txt
+./p1/3.txt
+./p1/5.json
+./p1/pp1
+./p1/pp2
+./p1/pp3
+./p2
+./p2/1.txt
+./p2/4.json
+./p3
+
+Даниил@home-pc MINGW64 ~/desktop/telegram/домашка/dir1
+$ find . -name "2.txt"
+./p1/2.txt
+
+16.Посмотреть содержимое файла в реальном времени
+Даниил@home-pc MINGW64 ~/Desktop/Telegram/Домашка/1 Terminal/dir1/p2
+$ tail -f 1.txt
+
+{
+First name "Daniil"
+Last name "Pechenkin"
+Country "Russia"
+City "Ekaterinburg"
+Age "28"
+}
+
+
+
+[6]+  Stopped                 tail -f 1.txt
+
+17.Вывести несколько первых строк из текстового файла
+Даниил@home-pc MINGW64 ~/Desktop/Telegram/Домашка/1 Terminal/dir1
+$ grep "[a-z]" p2/1.txt
+First name "Daniil"
+Last name "Pechenkin"
+Country "Russia"
+City "Ekaterinburg"
+Age "28"
+
+Даниил@home-pc MINGW64 ~/desktop/telegram/домашка/dir1
+$ grep Daniil p2/1.txt
+First name "Daniil"
+
+18.Вывести несколько последних строк из текстового файла
+Даниил@home-pc MINGW64 ~/desktop/telegram/домашка/dir1
+$ grep -r -i -A2 daniil
+p2/1.txt:First name "Daniil"
+p2/1.txt-Last name "Pechenkin"
+p2/1.txt-Country "Russia"
+
+Даниил@home-pc MINGW64 ~/desktop/telegram/домашка/dir1
+$ grep -r -i -B2 age
+p2/1.txt-Country "Russia"
+p2/1.txt-City "Ekaterinburg"
+p2/1.txt:Age "28"
+
+19.Посмотреть содержимое длинного файла
+Даниил@home-pc MINGW64 ~/desktop/telegram/домашка/dir1
+$ less p2/1.txt
+
+20.Вывести дату и время
+Даниил@home-pc MINGW64 ~/desktop/telegram/домашка/dir1
+$ date
+Tue Mar 22 21:07:33 RTZ 2022
+
+*1.Отправить http запрос на сервер http://162.55.220.72:5005/terminal-hw-request
+
+Даниил@home-pc MINGW64 ~/Desktop/Telegram/Домашка/1 Terminal
+$ curl http://162.55.220.72:5005/terminal-hw-request
+ % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   237  100   237    0     0   1380      0 --:--:-- --:--:-- --:--:--  1377{"Intro":"Hello!! This is your the first response from server","Tasks":{"Task_1":"Send the next URL in terminal: http://162.55.220.72:5005/get_method?name=(set_your_String)&age=(set_your_number)","result":["Your_String","Your_number"]}}
+
+Даниил@home-pc MINGW64 ~/Desktop/Telegram/Домашка/1 Terminal
+$ curl http://162.55.220.72:5005/get_method?"name=(Daniil)&age=(28)"
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100    20  100    20    0     0    140      0 --:--:-- --:--:-- --:--:--   141["(Daniil)","(28)"]
+
+*2.Написать скрипт, который автоматически выполнит пункты 3-8,13.
+Даниил@home-pc MINGW64 ~/Desktop/Telegram/Домашка/1 Terminal/dir1
+$ touch script1.txt
+
+Даниил@home-pc MINGW64 ~/Desktop/Telegram/Домашка/1 Terminal/dir1
+$ chmod u+x script1.txt
+
+Даниил@home-pc MINGW64 ~/Desktop/Telegram/Домашка/1 Terminal/dir1
+$ vim script1.txt
+
+#!/bin/bash
+echo "Start the script1"
+cd p3
+mkdir {folder_1,folder_2,folder_3}
+cd folder_1
+touch {script_1.txt,script_2.txt,script_3.txt,script_4.json,script_5.json}
+mkdir {folder_1.1,folder_1.2,folder1.3}
+mv p3/folder_1/script_1.txt p3/folder_1/folder_1.1/script_1.txt
+mv p3/folder_1/script_4.json p3/folder_1/folder_1.1/script_4.json
+echo "Stop the script1"
+
