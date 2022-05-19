@@ -72,13 +72,13 @@ function checkAge3(age_3) {
     else {console.log("Technikal work")}
 }
 //-------------------------------------------------
-console.log("HW_1*4----------------------------");
-let age_4 = prompt ("How old are you?", "")
-if (typeof(+age_4) == "number") {checkAge3(age_4)} 
-else {alert("Error!")}
-function checkAge3(age_4) {
-    if (age_4 < age2) {alert("You don’t have access cause your age is " + age_4, ". It’s less then " + age2)}
-    else if (age_4 >= age2 & age_4 < age3) {alert("Welcome!")}
-    else if (age_4 > age3) {alert("Keep calm and look Culture channel")}
-    else {alert("Technikal work")}}
+// console.log("HW_1*4----------------------------");
+// let age_4 = prompt ("How old are you?", "")
+// if (typeof(+age_4) == "number") {checkAge3(age_4)} 
+// else {alert("Error!")}
+// function checkAge3(age_4) {
+//     if (age_4 < age2) {alert("You don’t have access cause your age is " + age_4, ". It’s less then " + age2)}
+//     else if (age_4 >= age2 & age_4 < age3) {alert("Welcome!")}
+//     else if (age_4 > age3) {alert("Keep calm and look Culture channel")}
+//     else {alert("Technikal work")}}
 
